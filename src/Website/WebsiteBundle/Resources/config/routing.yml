@@ -1,0 +1,36 @@
+# route de la page d'accueil
+WebsiteWebsiteBundle_homepage:
+    pattern:  /
+    defaults: { _controller: WebsiteWebsiteBundle:Page:index }
+    requirements:
+        _method:  GET
+
+# route de la page de contact
+WebsiteWebsiteBundle_contact:
+    pattern:  /contact
+    defaults: { _controller: WebsiteWebsiteBundle:Page:contact }
+    requirements:
+        _method:  GET|POST
+        
+# route de la page de competence
+WebsiteWebsiteBundle_competences:
+    pattern:  /competences
+    defaults: { _controller: WebsiteWebsiteBundle:Page:competences }
+    requirements:
+        _method:  GET
+        
+        
+# route de la page de portfolio
+WebsiteWebsiteBundle_portfolio:
+    pattern:  /portfolio
+    defaults: { _controller: WebsiteWebsiteBundle:Page:portfolio }
+    requirements:
+        _method:  GET
+        
+# Routes pour connexion
+
+login:
+    pattern: /login
+    defaults: { _controller: WebsiteWebsiteBundle:Default:login }
+login_check:
+    pattern: /login_check

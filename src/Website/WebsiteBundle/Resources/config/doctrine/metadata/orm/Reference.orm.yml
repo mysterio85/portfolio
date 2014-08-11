@@ -1,0 +1,62 @@
+Reference:
+    type: entity
+    table: reference
+    indexes:
+        idCategorie:
+            columns:
+                - idCategorie
+    id:
+        idreference:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: idReference
+            generator:
+                strategy: IDENTITY
+    fields:
+        libellereference:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+            column: libelleReference
+        descriptionreference:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: descriptionReference
+        lienreference:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+            column: lienReference
+        imagereference:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+            column: imageReference
+    manyToOne:
+        idcategorie:
+            targetEntity: Categorie
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idCategorie:
+                    referencedColumnName: idCategorie
+            orphanRemoval: false
+    lifecycleCallbacks: 
+        prePersist: [ preUpload ]
+        preUpdate: [ preUpload ]
+        postPersist: [ upload ]
+        postUpdate: [ upload ]
+        

@@ -1,0 +1,36 @@
+Slideshow:
+    type: entity
+    table: slideshow
+    id:
+        idslideshow:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: idSlideshow
+            generator:
+                strategy: IDENTITY
+    fields:
+        titreslideshow:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+            column: titreSlideshow
+        detailslideshow:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+            column: detailSlideshow
+        imageslideshow:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+            column: imageSlideshow
+    lifecycleCallbacks: {  }

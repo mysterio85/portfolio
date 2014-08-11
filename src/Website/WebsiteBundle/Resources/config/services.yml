@@ -1,0 +1,50 @@
+parameters:
+#    website_website.example.class: Website\WebsiteBundle\Example
+
+services:
+#    website_website.example:
+#        class: %website_website.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+
+# Categorie Admin
+    website.website.admin.categorieAdmin:
+        class: Website\WebsiteBundle\Admin\CategorieAdmin
+        tags:
+            - { name:sonata.admin, manager_type:orm, group: Gestion du site, label:Categorie  }
+        arguments: [null, Website\WebsiteBundle\Entity\Categorie, WebsiteWebsiteBundle:CategorieAdmin]
+
+# Competences Admin        
+    website.website.admin.competencesAdmin:
+        class: Website\WebsiteBundle\Admin\CompetencesAdmin
+        tags:
+            - { name:sonata.admin, manager_type:orm, group: Gestion du site, label:Competences  }
+        arguments: [null, Website\WebsiteBundle\Entity\Competences, WebsiteWebsiteBundle:CompetencesAdmin]
+
+# Module Admin       
+    website.website.admin.modueleAdmin:
+        class: Website\WebsiteBundle\Admin\ModuleAdmin
+        tags:
+            - { name:sonata.admin, manager_type:orm, group: Gestion du site, label: Modules  }
+        arguments: [null, Website\WebsiteBundle\Entity\Module, WebsiteWebsiteBundle:ModuleAdmin]
+
+# Pages Admin        
+    website.website.admin.pageAdmin:
+        class: Website\WebsiteBundle\Admin\PageAdmin
+        tags:
+            - { name:sonata.admin, manager_type:orm, group: Gestion du site, label: Pages  }
+        arguments: [null, Website\WebsiteBundle\Entity\Page, WebsiteWebsiteBundle:PageAdmin]
+        
+# Reference Admin       
+    website.website.admin.referenceAdmin:
+        class: Website\WebsiteBundle\Admin\ReferenceAdmin
+        tags:
+            - { name:sonata.admin, manager_type:orm, group: Gestion du site, label: References  }
+        arguments: [null, Website\WebsiteBundle\Entity\Reference, WebsiteWebsiteBundle:ReferenceAdmin]
+
+# Slideshow Admin        
+    website.website.admin.slideshowAdmin:
+        class: Website\WebsiteBundle\Admin\SlideshowAdmin
+        tags:
+            - { name:sonata.admin, manager_type:orm, group: Gestion du site, label: Slideshow  }
+        arguments: [null, Website\WebsiteBundle\Entity\Slideshow, WebsiteWebsiteBundle:SlideshowAdmin]

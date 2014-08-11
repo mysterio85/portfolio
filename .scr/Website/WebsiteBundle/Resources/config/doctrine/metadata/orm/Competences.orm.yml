@@ -1,0 +1,42 @@
+Competences:
+    type: entity
+    table: competences
+    id:
+        idcompetence:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: idCompetence
+            generator:
+                strategy: IDENTITY
+    fields:
+        libellecompetence:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+            column: libelleCompetence
+        notecompetence:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: noteCompetence
+        descriptioncompetence:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: descriptionCompetence
+        imagecompetence:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+            column: imageCompetence
+    lifecycleCallbacks: {  }

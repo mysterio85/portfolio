@@ -1,0 +1,50 @@
+Module:
+    type: entity
+    table: module
+    indexes:
+        idPage:
+            columns:
+                - idPage
+    id:
+        idmodule:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: idModule
+            generator:
+                strategy: IDENTITY
+    fields:
+        titremodule:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+            column: titreModule
+        contenumodule:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: contenuModule
+        imagemodule:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+            column: imageModule
+    manyToOne:
+        idpage:
+            targetEntity: Page
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idPage:
+                    referencedColumnName: idPage
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

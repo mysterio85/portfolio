@@ -1,0 +1,17 @@
+#mes parametres   
+parameters:
+    #adresse mail de contact
+    website.emails.contact_email: essoagenial@yahoo.fr
+    
+# Bloc des elements de sonata
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        #activer le block SonataAdminBundle 
+        sonata.admin.block.admin_list:
+            contexts: [admin]
+framework:
+    translator: { fallback: %locale% }
+sonata_admin:
+    title: ESSOA Admin
+            

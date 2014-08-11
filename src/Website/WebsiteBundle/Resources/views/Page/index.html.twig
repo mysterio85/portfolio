@@ -1,0 +1,136 @@
+{% extends 'WebsiteWebsiteBundle::layout.html.twig' %}
+{% block body %}
+ 
+    	
+    	
+	        
+	        <section id="main-slider" class="no-margin">
+        <div class="carousel slide wet-asphalt">
+            <ol class="carousel-indicators">
+                <li data-target="#main-slider" data-slide-to="0" class="active"></li>
+                <li data-target="#main-slider" data-slide-to="1"></li>
+                <li data-target="#main-slider" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                {% set i = 0 %}
+                {% set selected = "" %}
+                {% for slide in slideshows %}
+                {% if i== 0 %} {% set selected = 'active'%}
+                {% else %} {% set selected = ''%}{% endif %}
+                <div class="item {{selected}}" style="background-image: url({{ asset('legacy/images/slider/') }}{{slide.imageSlideshow}})">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="carousel-content center centered">
+                                    <h2 class="boxed animation animated-item-1">{{ slide.titreSlideshow}}</h2>
+                                    <br><p class="boxed animation animated-item-2">{{ slide.detailSlideshow}}</p>
+                                    <br>
+                                    <!--<a class="btn btn-md animation animated-item-3" href="#">Learn More</a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.item-->
+                {% set i = i + 1%}
+                {% endfor %}
+            </div><!--/.carousel-inner-->
+        </div><!--/.carousel-->
+        
+	        <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
+	            <i class="icon-angle-left"></i>
+	        </a>
+	        <a class="next hidden-xs" href="#main-slider" data-slide="next">
+	            <i class="icon-angle-right"></i>
+	        </a>
+    	</section><!--/#main-slider-->
+    	
+    	<section id="services" class="emerald">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="media">
+                        <div class="pull-left">
+                            <i class="icon-twitter icon-md"></i>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">Twitter Marketing</h3>
+                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+                        </div>
+                    </div>
+                </div><!--/.col-md-4-->
+                <div class="col-md-4 col-sm-6">
+                    <div class="media">
+                        <div class="pull-left">
+                            <i class="icon-facebook icon-md"></i>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">Facebook Marketing</h3>
+                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+                        </div>
+                    </div>
+                </div><!--/.col-md-4-->
+                <div class="col-md-4 col-sm-6">
+                    <div class="media">
+                        <div class="pull-left">
+                            <i class="icon-google-plus icon-md"></i>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">Google Plus Marketing</h3>
+                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+                        </div>
+                    </div>
+                </div><!--/.col-md-4-->
+            </div>
+        </div>
+    </section><!--/#services-->
+
+	<!--/#les recents travaux-->
+    <section id="recent-works">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<h3>Derniers projets r&eacute;alis&eacute;s</h3>
+				<p>Derniers projets r&eacute;alis&eacute; pour des clients qui nous ont fait confiance.</p>
+				<div class="btn-group">
+					<a class="btn btn-danger" href="#scroller" data-slide="prev"><i class="icon-angle-left"></i></a>
+					<a class="btn btn-danger" href="#scroller" data-slide="next"><i class="icon-angle-right"></i></a>
+				</div>
+				<p class="gap"></p>
+			</div>
+			<div class="col-md-9">
+				<div id="scroller" class="carousel slide">
+					<div class="carousel-inner">
+						{% set i = 0 %}
+						{% for portfolio in portfolios %}
+						{% if i== 0 %} {% set selected = 'active'%} {% else %} {% set selected = ''%}{% endif %}
+						{% if i is divisible by(3) %}
+						<div class="item {{selected}}">
+							<div class="row">
+						{% endif %}	
+								<div class="col-xs-4">
+									<div class="portfolio-item">
+										<div class="item-inner">
+											<img class="img-responsive" src="{{ asset(['legacy/images/references/', portfolio.imageReference]|join) }}" alt="">
+											<h5>
+												{{ portfolio.libelleReference(50) }}
+											</h5>
+											<div class="overlay">
+												<a class="preview btn btn-danger" title="{{ portfolio.libelleReference(50) }}" href="{{ asset(['legacy/images/references/', portfolio.imageReference]|join) }}" rel="prettyPhoto"><i class="icon-eye-open"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>                            
+							{% set i = i + 1%}							  
+							{% if i is divisible by(3) %} 
+							</div><!--/.row-->
+						</div><!--/.item-->
+							{% endif %}
+						
+						{% endfor %} 
+					</div>
+				</div>
+			</div>
+		</div><!--/.row-->
+	</div>
+</section><!--/#recent-works-->
+{% endblock %}

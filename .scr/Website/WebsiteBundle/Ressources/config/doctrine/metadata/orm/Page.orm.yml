@@ -1,0 +1,29 @@
+Page:
+    type: entity
+    table: page
+    id:
+        idpage:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: idPage
+            generator:
+                strategy: IDENTITY
+    fields:
+        libellepage:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+            column: libellePage
+        descriptionpage:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+            column: descriptionPage
+    lifecycleCallbacks: {  }

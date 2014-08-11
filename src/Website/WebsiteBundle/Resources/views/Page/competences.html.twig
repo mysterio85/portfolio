@@ -1,0 +1,101 @@
+{% extends 'WebsiteWebsiteBundle::layout.html.twig' %}
+{% block body %}
+ 
+  <section id="title" class="emerald">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>Mes competences</h1>
+                    <p>Voici un descriptif de mes compétences</p>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="breadcrumb pull-right">
+                        <li><a href="{{ path('WebsiteWebsiteBundle_homepage') }}">Accueil</a></li>
+                        <li class="active">Mes comp&eacute;tences</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section><!--/#title-->
+
+    <section id="about-us" class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Mon CV</h2>
+<p>
+<h2><span class="label label-primary">CURSUS SCOLAIRE & DIPLOMES</span></h2>
+	<div class="bs-callout bs-callout-info">
+		<h4><code>2012 - 2013</code> MASTERE SPECIALISE <small>Technologies du Web, Systèmes Sécurité et services</small></h4>
+		<p>TELECOM BRETAGNE (BREST – France )</p>
+	</div>
+	<div class="bs-callout bs-callout-info">
+		<h4><code>2007 - 2009</code> INGÉNIEUR INFORMATIQUE <small>Developpement d'applications informatiques</small></h4>
+		<p>Groupe ifpg-isftp (Abidjan - côte d’ivoire)</p>
+	</div>
+	<div class="bs-callout bs-callout-info">
+		<h4><code>2004 - 2006</code> BTS <small>NTIC (Nouvelles Technologies de l'Information et de la Communication)</small></h4>
+		<p>Institut de Technologies et Spécialités (ITES) Abidjan - côte d’ivoire)</p>
+	</div>
+</p>
+
+
+<p>
+<h2><span class="label label-primary">EXPÉRIENCES PROFESSIONNELLES</span></h2>
+
+	<div class="bs-callout bs-callout-info">
+		<h4>GROUPAMA G2S <small>Centre technique du groupe Groupama</small></h4>
+		<p><code>JUIN – OCTOBRE 2013  [5 mois]</code> </p>
+		Missions : 
+		<ul>
+			<li>Rédaction de spécifications</li>
+			<li>Développement d’une application web de  demande de travaux d’exploitation</li>
+		</ul>
+	</div>
+	
+	<div class="bs-callout bs-callout-info">
+		<h4>KAMELEO STUDIO <small>Agence de communication multimédia</small></h4>
+		<p><code>14 DEC 2009 - 07 JUIN 2012  [29 mois]</code> </p>
+		Missions : 
+		<ul>		 		
+			<li>Développement de portails  Web</li> 	 
+			<li>Développement de sites institutionnels</li>
+		</ul>
+	</div>
+	
+	<div class="bs-callout bs-callout-info">
+		<h4>DIGITAL EDGE <small>Agence de communication multimédia</small></h4>
+		<p><code>10 NOV 2007 - 04 DEC 2009  [24 mois]</code> </p>
+		Missions : 
+		<ul>
+			<li>Développement de sites institutionnels</li>
+			<li>Développement de sites institutionnels</li>
+		</ul>
+	</div>
+
+	<div class="bs-callout bs-callout-info">
+		<h4>SERVITIS WEB <small>Agence web </small></h4>
+		<p><code>09 JUIL 2007- 08 OCT 2007   [4 mois]</code> </p>
+		Missions : 
+		<ul>
+			<li>Développement de portails </li>
+			<li>Développement de sites institutionnels</li>
+		</ul>
+	</div>
+</p>
+            </div><!--/.col-sm-6-->
+            <div class="col-sm-6">
+                <h2>Mes comp&eacute;tences</h2>
+                <div>
+                {% for competence in competences %}
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{competence.noteCompetence}}" aria-valuemin="0" aria-valuemax="100" style="width: {{competence.noteCompetence}}%;">
+                            <span>{{competence.libelleCompetence}}</span>
+                        </div>
+                    </div>
+                {% endfor %}
+                    
+                </div>
+            </div><!--/.col-sm-6-->
+        </div><!--/.row-->
+    </section>    
+{% endblock %}

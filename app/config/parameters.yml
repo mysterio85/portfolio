@@ -1,0 +1,14 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_mysql
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: essoa
+    database_user: root
+    database_password: null
+    mailer_transport: gmail
+    mailer_host: mail.yahoo.fr
+    mailer_user: essoagenial@yahoo.fr
+    mailer_password: Bado1985
+    locale: en
+    secret: d3901de83201b48289b3cf93f9f177e606e7da55
