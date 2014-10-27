@@ -19,8 +19,8 @@ class PageAdmin extends Admin
 	
 	protected  function configureFormFields(FormMapper $formMapper){
 		$formMapper
-		->add('libellepage')
-		->add('descriptionpage')
+		->add('libellepage','text',array('label'=>'Page'))
+		->add('descriptionpage','textarea',array('label'=>'Description'))
 		;
 	}
 	//
@@ -34,8 +34,8 @@ class PageAdmin extends Admin
 	protected function configureListFields(ListMapper $listMapper){
 	
 		$listMapper
-		->add('libellepage')
-		->add('descriptionpage')
+		->add('libellepage',null,array('label'=>'Page'))
+		->add('descriptionpage',null,array('label'=>'Description'))
 		->add('_action', 'actions', array(
 				'actions' => array(
 						'show' => array(),

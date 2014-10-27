@@ -18,10 +18,10 @@ class ModuleAdmin extends Admin
 	
 	protected  function configureFormFields(FormMapper $formMapper){
 		$formMapper
-		->add('titremodule')
-		->add('idpage','sonata_type_model_list',array())
+		->add('titremodule','text',array('label'=>'Module'))
+		->add('idpage','sonata_type_model_list',array('label'=>'Page'))
 		->add('file','file',array('label'=>'Image du module'))
-		->add('contenumodule')
+		->add('contenumodule','textarea',array('label'=>'Contenu'))
 		;
 	}
 	//
@@ -36,10 +36,10 @@ class ModuleAdmin extends Admin
 	//
 	protected function configureListFields(ListMapper $listMapper){
 		$listMapper
-		->add('titremodule')
-		->add('idpage')
-		->add('imagemodule')
-		->add('contenumodule')
+		->add('titremodule',null,array('label'=>'Titre'))
+		->add('idpage',null,array('label'=>'Page'))
+		->add('imagemodule',null,array('label'=>'Images'))
+		->add('contenumodule',null,array('label'=>'Contenu'))
 		->add('_action', 'actions', array(
 				'actions' => array(
 						'show' => array(),

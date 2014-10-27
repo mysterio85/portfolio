@@ -26,8 +26,8 @@ class ReferenceAdmin extends Admin
 		->add('file','file',array(
 				'label'=>'Capture d\'ecran',
 				'required'=>false))
-		->add('lienreference')
-		->add('descriptionreference')
+		->add('lienreference','text',array('label'=>'Lien de la reference'))
+		->add('descriptionreference','textarea',array('label'=>'Description'))
 		;
 	}
 
@@ -47,11 +47,11 @@ class ReferenceAdmin extends Admin
 	protected function configureListFields(ListMapper $listMapper){
 	
 		$listMapper
-		->add('libellereference')
-		->add('idcategorie')
-		->add('imagereference')
-		->add('lienreference')
-		->add('descriptionreference')
+		->add('libellereference',null,array('label'=>'Reference'))
+		->add('idcategorie',null,array('label'=>'Categorie'))
+		->add('imagereference',null,array('label'=>'Images'))
+		->add('lienreference',null,array('label'=>'Lien'))
+		->add('descriptionreference',null,array('label'=>'Description'))
 		->add('_action', 'actions', array(
 				'actions' => array(
 						'show' => array(),

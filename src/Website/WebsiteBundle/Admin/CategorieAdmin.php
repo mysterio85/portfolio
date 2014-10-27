@@ -21,7 +21,7 @@ class CategorieAdmin extends Admin
 	// methode de creation de liste
 	protected function configureFormFields(FormMapper $formMapper){
 		$formMapper
-		->add('libelle')
+		->add('libelle','text',array('label'=>'Categorie'))
 		;
 		
 	}
@@ -36,7 +36,7 @@ class CategorieAdmin extends Admin
 	// methode de creation de formulaires 
 	protected  function configureListFields(ListMapper $ListMapper){
 		$ListMapper
-		->add('libelle')
+		->add('libelle',null,array('label'=>'Categories'))
 		->add('_action', 'actions', array(
 				'actions' => array(
 						'show' => array(),

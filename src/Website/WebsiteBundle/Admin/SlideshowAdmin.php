@@ -20,8 +20,8 @@ class SlideshowAdmin extends Admin
 	protected  function configureFormFields(FormMapper $formMapper){
 	
 		$formMapper
-		->add('titreslideshow')
-		->add('detailslideshow')
+		->add('titreslideshow','text',array('label'=>'Titre'))
+		->add('detailslideshow','text',array('label'=>'Description'))
 		->add('file','file',array('label'=>'Image'))
 		;
 	}
@@ -38,9 +38,9 @@ class SlideshowAdmin extends Admin
 	protected function configureListFields(ListMapper $listMapper){
 	
 		$listMapper
-		->add('titreslideshow')
-		->add('detailslideshow')
-		->add('imageslideshow')
+		->add('titreslideshow',null,array('label'=>'Titre'))
+		->add('detailslideshow',null,array('label'=>'Details'))
+		->add('imageslideshow',null,array('label'=>'Images'))
 		->add('_action', 'actions', array(
 				'actions' => array(
 						'show' => array(),

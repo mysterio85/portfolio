@@ -21,10 +21,10 @@ class CompetencesAdmin extends Admin
 
 	protected  function configureFormFields(FormMapper $formMapper){
 		$formMapper
-		->add('libellecompetence')
+		->add('libellecompetence','text',array('label'=>'Competence'))
 		->add('file','file',array('label'=>'Logo competence'))
-		->add('notecompetence')
-		->add('descriptioncompetence')
+		->add('notecompetence','text',array('label'=>'Note / 100'))
+		->add('descriptioncompetence','textarea',array('label'=>'Description'))
 		;
 	}
 	//
@@ -39,10 +39,10 @@ class CompetencesAdmin extends Admin
 	//
 	protected function configureListFields(ListMapper $listMapper){
 		$listMapper
-		->add('libellecompetence')
-		->add('imagecompetence')
-		->add('notecompetence')
-		->add('descriptioncompetence')
+		->add('libellecompetence',null,array('label'=>'Competences'))
+		->add('imagecompetence',null,array('label'=>'Images'))
+		->add('notecompetence',null,array('label'=>'Note'))
+		->add('descriptioncompetence',null,array('label'=>'Description'))
 		->add('_action', 'actions', array( 
 				'actions' => array( 
 						'show' => array(), 
